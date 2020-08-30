@@ -1,3 +1,3 @@
-
-Docente: Pedro, 75315985, 36
-Docente: JUanPablo, 72413816, 56
+Docente: Juan, 75315985, 36
+Docente: Teresa, 10252456, 52
+Docente: Jorge, 74525685, 42
