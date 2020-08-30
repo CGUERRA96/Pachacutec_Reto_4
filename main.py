@@ -61,19 +61,19 @@ class Archivo():
                 print('Se visualiza un alumno')
 
 
-#cant_docentes = int(input('Cuantos docentes se agregara?: '))
-##persona_nombre = input('Como te llamas?: ')
-##persona_edad = int(input('Cual es su edad: '))
-##persona_sexo = input('Cual es su sexo: ')
-#
-#for p in range(cant_docentes):
-#    docentes_nombre = input('Como te llamas?: ')
-#    docentes_dni = input('Cual es tu dni?: ')    
-#    docentes_edad = int(input('Cual es tu edad: '))
-#
-#    docentes = Docente(docentes_nombre, docentes_dni, docentes_edad)
-#    archivo = Archivo('docentes.txt')
-#    archivo.agregar_docente(docentes)
+cant_docentes = int(input('Cuantos docentes se agregara?: '))
+#persona_nombre = input('Como te llamas?: ')
+#persona_edad = int(input('Cual es su edad: '))
+#persona_sexo = input('Cual es su sexo: ')
+
+for p in range(cant_docentes):
+    docentes_nombre = input('Como te llamas?: ')
+    docentes_dni = input('Cual es tu dni?: ')    
+    docentes_edad = int(input('Cual es tu edad: '))
+
+    docentes = Docente(docentes_nombre, docentes_dni, docentes_edad)
+    archivo = Archivo('docentes.txt')
+    archivo.agregar_docente(docentes)
 
 
 cant_alumnos = int(input('Cuantos alumnos se agregara?: '))
@@ -115,8 +115,8 @@ for v in lista_alumnos:
     print(f"notas: {v['notas']}")
     print(lista_alumnos)
                   
-    alumnos = Alumno(alumnos_nombre, alumnos_dni, alumnos_edad, lista_nota, min(v['notas']), max(v['notas']), sum(v['notas'])/len(v['notas'])})
-    archivo = Archivo('alumnos.txt')
-    archivo.agregar_docente(docentes)
+alumnos = Alumno(alumnos_nombre, alumnos_dni, alumnos_edad, lista_nota, f"{min(v['notas'])}", f"{max(v['notas'])}", f"{sum(v['notas'])/len(v['notas'])}")
+archivo = Archivo('alumnos.txt')
+archivo.agregar_alumno(alumnos)
 
 #archivo.mostrar_archivo()
