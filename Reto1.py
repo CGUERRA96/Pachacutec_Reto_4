@@ -66,7 +66,7 @@ print('''
     2.- REGISTRAR ALUMNOS
 ''')
 
-opcion_seleccion = int(input('Seleccione una opción: ')) 
+opcion_seleccion = int(input('Seleccione una opción >> ')) 
 
 if opcion_seleccion == 1:    
     cant_docentes = int(input('Cuantos docentes se agregara?: '))
@@ -87,7 +87,6 @@ if opcion_seleccion == 1:
 elif opcion_seleccion == 2:
     
     cant_alumnos = int(input('Cuantos alumnos se agregara?: '))
-
     lista_alumnos = []
     for a in range(cant_alumnos):
         alumno_nombre = []
@@ -96,36 +95,34 @@ elif opcion_seleccion == 2:
         alumnos_dni = input('Cual es tu dni?: ')
         alumno_edad = []
         alumnos_edad = int(input('Cual es tu edad: '))
+        while True:
 
-        cant_notas = int(input('Ingrese cantidad de notas: '))
-        lista_nota = []
-        for n in range(cant_notas):
-            while True:
-                notas = int(input(f"Ingrese la nota {n + 1}:"))
-                if  notas >= 0 and notas <= 20:
-                    lista_nota.append(notas)
-                    break
-                else:
-                    print('Ingresar una nota entre 00 al 20')
+            cant_notas = int(input('Ingrese cantidad de notas: '))
+            if cant_notas >= 0 and cant_notas<=4:
+                lista_nota = []
+                for n in range(cant_notas):
+                        while True:
+                            notas = int(input(f"Ingrese la nota {n + 1}:"))
+                            if  notas >= 0 and notas <= 20:
+                                lista_nota.append(notas)
+                                break
+                            else:
+                                print('Ingresar una nota entre 00 al 20')
 
-        lista_alumnos.append({
-            'alumno': {
-                'nombre': alumnos_nombre,
-                'DNI': alumnos_dni,
-                'Edad': alumnos_edad
-            },
-            'notas': lista_nota
-        })
+                lista_alumnos.append({
+                    'Alumno': {
+                        'Nombre': alumnos_nombre,
+                        'DNI': alumnos_dni,
+                        'Edad': alumnos_edad
+                    },
+                    'Notas': lista_nota
+                })
+                break
+            else:
+                print("Ingresar un numero del 1 al 4")
 
-    for v in lista_alumnos:
-        #print("########################")
-        #print(f"Alumnos : {v['alumno']['nombre']}")
-        #print(f"Alumnos : {v['alumno']['DNI']}")
-        #print(f"Alumnos : {v['alumno']['Edad']}")    
-        #print(f"notas: {v['notas']}")
-        #print(lista_alumnos)
-                    
-        alumnos = Alumno(alumnos_nombre, alumnos_dni, alumnos_edad, lista_nota, f"{min(v['notas'])}", f"{max(v['notas'])}", f"{sum(v['notas'])/len(v['notas'])}")
+    for v in lista_alumnos:                    
+        alumnos = Alumno(f"{v['Alumno']['DNI']}", f"{v['Alumno']['Nombre']}", f"{v['Alumno']['Edad']}", f"{v['Notas']}", f"{min(v['Notas'])}", f"{max(v['Notas'])}", f"{sum(v['Notas'])/len(v['Notas'])}")
         archivo = Archivo('alumnos.txt')
         archivo.agregar_alumno(alumnos)
 

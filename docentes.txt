@@ -1,3 +1,6 @@
 Docente: Juan, 75315985, 36
 Docente: Teresa, 10252456, 52
 Docente: Jorge, 74525685, 42
+Docente: Carlos, 45522011, 25
+Docente: Micaela, 85255441, 35
+Docente: Lurdes, 10257416, 59
