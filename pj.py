@@ -2,7 +2,7 @@ persona:{
     "Tipo":{
         "Docente":{
             "Atributo":{
-                "Nombre": input('Ingrese nombre del docente'),
+                "Nombre": input('Ingrese nombre del docente: '),
                 "DNI": input("Ingrese el DNI: "),
                 "Edad": int(input("Ingrese su edad: "))
             }
@@ -12,7 +12,7 @@ persona:{
                 "Nombre": input('Ingrese nombre del docente'),
                 "DNI": input("Ingrese el DNI: "),
                 "Edad": int(input("Ingrese su edad: ")),
-                "Notas": int(input("Ingrese su edad: "))
+                #"Notas": int(input("Ingrese su edad: "))
             }
         }
     }
