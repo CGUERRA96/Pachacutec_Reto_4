@@ -65,8 +65,11 @@ class Alumno(Docente):
 
         cant_alumnos = int(input('Cuantos alumnos se agregara?: '))
         for a in range(cant_alumnos):
+            self.dni = []
             self.dni = input('Ingrese el DNI: ')
+            self.nombre = []
             self.nombre = input('Ingrese nombre del alumno: ')
+            self.edad = []
             self.edad = int(input('Ingrese su edad: '))
             while True:
 
